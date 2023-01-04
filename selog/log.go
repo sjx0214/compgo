@@ -2,6 +2,6 @@ package selog
 
 import "fmt"
 
-func log(){
-	fmt.Println("init_log")
+func Tuse(name string) {
+	fmt.Println(name)
 }
