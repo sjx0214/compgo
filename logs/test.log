@@ -1,0 +1,2 @@
+2023-01-04T21:16:07.100+0800	info	test log	{"user": {"Name":"jack"}, "func": "selog_test.TestLog", "file": "e:/Projects/goCode/src/CompGo/selog/log_test.go", "line": 20}
+2023-01-04T21:22:36.665+0800	info	test log	{"user": {"Name":"jack"}, "func": "selog_test.TestLog", "file": "log_test.go", "line": 20}
