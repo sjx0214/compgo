@@ -160,6 +160,7 @@ func getCallerInfoForLog() (callerFields []zap.Field) {
 	funcName = path.Base(funcName) //Base函数返回路径的最后一个元素，只保留函数名
 	fileName := path.Base(file)
 	callerFields = append(callerFields, zap.String("func", funcName), zap.String("file", fileName), zap.Int("line", line))
+
 	return
 }
 
