@@ -1,9 +1,11 @@
 package selog
 
 import (
+	"fmt"
 	"os"
 	"path"
 	"runtime"
+	"strings"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -121,8 +123,25 @@ func (sl *SeLogger) Panict(msg string) {
 
 // 用于创建子Logger
 func (sl *SeLogger) Named(name string) Logger {
-	sl.selogger = sl.selogger.Named(name)
+	format_name := formatName(name)
+	sl.selogger = sl.selogger.Named(format_name)
 	return sl
+}
+
+func formatName(name string) string {
+	format_str := ""
+	space := " "
+	name = fmt.Sprintf("[%s]", name)
+	origin_length := len(name)
+	if 20-origin_length < 0 {
+		cut_str := name[:18]
+		format_str = fmt.Sprintf("%s.]", cut_str)
+	} else {
+		space_count := 20 - origin_length
+		end_spaces := strings.Repeat(space, space_count)
+		format_str = fmt.Sprintf("%s%s", name, end_spaces)
+	}
+	return format_str
 }
 
 func (sl *SeLogger) With(fields ...zap.Field) Logger {
