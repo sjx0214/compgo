@@ -32,7 +32,3 @@ func (t STime) Format() string {
 func (t STime) FormatSimple() string {
 	return time.Time(t).Format("2006-01-02")
 }
-
-type TII struct {
-	Create_time STime `json:"create_time"`
-}
