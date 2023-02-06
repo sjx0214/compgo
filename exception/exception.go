@@ -31,12 +31,12 @@ func NewAPIException(namespace string, code int, reason, format string, a ...int
 	}
 }
 
-func NewAPIExceptionFromString(msg string) APIException {
+func NewAPIExceptionFromString(code int, msg string) APIException {
 	e := &exception{}
 	if !strings.HasPrefix(msg, "{") {
 		e.Message = msg
-		e.Code = InternalServerError
-		e.HttpCode = InternalServerError
+		e.Code = code
+		e.HttpCode = http.StatusOK
 		return e
 	}
 
@@ -50,8 +50,8 @@ func NewAPIExceptionFromString(msg string) APIException {
 }
 
 // {"namespace":"","http_code":404,"error_code":404,"reason":"资源未找到","message":"test","meta":null,"data":null}
-func NewAPIExceptionFromError(err error) APIException {
-	return NewAPIExceptionFromString(err.Error())
+func NewAPIExceptionFromError(code int, err error) APIException {
+	return NewAPIExceptionFromString(code, err.Error())
 }
 
 // NewUnauthorized 未认证
