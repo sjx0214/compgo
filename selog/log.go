@@ -72,23 +72,23 @@ func (sl *SeLogger) Debugf(format string, args ...interface{}) {
 }
 
 func (sl *SeLogger) Infof(format string, args ...interface{}) {
-	sl.selogger.Sugar().Debugf(format, args...)
+	sl.selogger.Sugar().Infof(format, args...)
 }
 
 func (sl *SeLogger) Warnf(format string, args ...interface{}) {
-	sl.selogger.Sugar().Debugf(format, args...)
+	sl.selogger.Sugar().Warnf(format, args...)
 }
 
 func (sl *SeLogger) Errorf(format string, args ...interface{}) {
-	sl.selogger.Sugar().Debugf(format, args...)
+	sl.selogger.Sugar().Errorf(format, args...)
 }
 
 func (sl *SeLogger) Fatalf(format string, args ...interface{}) {
-	sl.selogger.Sugar().Debugf(format, args...)
+	sl.selogger.Sugar().Fatalf(format, args...)
 }
 
 func (sl *SeLogger) Panicf(format string, args ...interface{}) {
-	sl.selogger.Sugar().Debugf(format, args...)
+	sl.selogger.Sugar().Panicf(format, args...)
 }
 
 func (sl *SeLogger) Debugt(msg string) {
