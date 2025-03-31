@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/StephenJixu/CompGo/exception"
+	"github.com/sjx0214/compgo/exception"
 )
 
 // Failed use to response error messge

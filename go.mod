@@ -1,4 +1,4 @@
-module github.com/StephenJixu/CompGo
+module github.com/sjx0214/compgo
 
 go 1.19
 

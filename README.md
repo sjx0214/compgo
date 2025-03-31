@@ -1,1 +1,1 @@
-# CompGo
+compgo
